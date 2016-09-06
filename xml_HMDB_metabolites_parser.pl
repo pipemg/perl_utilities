@@ -146,11 +146,8 @@ for(my $i=0; $i<scalar(@metabolite_files); $i++){
 	#PRINT THE VALUES TO THE FILE
 	
 
-	print OUT ("$accession\t$name\t$secondary_accessions\t");
-	print OUT ("$iupac_name\t");
-	print OUT ("$chemical_formula\t");
-	print OUT ($description."\t");
-	print OUT ("$synonyms\t$drugbank\t$drugbank_metabolite\t$inchi\t$inchikey\t$pubchem\t$chebi\tkegg_id\t$metlin\t$traditional_iupac\t$monisotopic\t$creation\t$nugowiki\t$weight\t$version\t$pubmed\t$protein_names\t$protein_accession\t$protein_type\t$uniprot_id\t$update_date\t$cas_registry_number\t$chemspider_id\n");
+	print OUT ("$accession\t$name\t$secondary_accessions\t$iupac_name\t$chemical_formula\t$description\t");
+	print OUT ("$synonyms\t$drugbank\t$drugbank_metabolite\t$inchi\t$inchikey\t$pubchem\t$chebi\t$kegg_id\t$metlin\t$traditional_iupac\t$monisotopic\t$creation\t$nugowiki\t$weight\t$version\t$pubmed\t$protein_names\t$protein_accession\t$protein_type\t$uniprot_id\t$update_date\t$cas_registry_number\t$chemspider_id\n");
 
 }
  
