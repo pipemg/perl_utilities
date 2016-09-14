@@ -83,14 +83,14 @@ for(my $i=0; $i<scalar(@protein_files); $i++){
 	my $xml = new XML::Simple;  
 	my $data = $xml->XMLin($protein_files[$i], KeyAttr => []);;
 	#print Dumper($data);
-	my $version = $data->{version};
-	my $creation_date = $data->{creation_date};
-	my $update_date = $data->{update_date};
-	my $accession = $data->{accession};
+	my $version = array_dumper ($data->{version});
+	my $creation_date = array_dumper ($data->{creation_date});
+	my $update_date = array_dumper ($data->{update_date});
+	my $accession = array_dumper ($data->{accession});
 	my $secondary_accessions = array_dumper($data->{secondary_accessions}->{accession});
-	my $protein_type = $data->{protein_type};
+	my $protein_type = array_dumper ($data->{protein_type});
 	my $synonyms= array_dumper($data->{synonyms}->{synonym});
-	my $gene_name = $data->{gene_name};
+	my $gene_name = array_dumper ($data->{gene_name});
 	my $general_function = array_dumper ($data->{general_function});
 	my $specific_function = array_dumper ($data->{specific_function});
 	$specific_function=~s/[\n|\t]//gi;
@@ -230,4 +230,3 @@ for(my $i=0; $i<scalar(@protein_files); $i++){
 close(OUT);
 
 #THIS HELPS TO THE DESCRIPTION OF THE FILE, IN THIS CASE IS COMMENTED BEACUSE IT WAS ANALYZED BEFORE
-
