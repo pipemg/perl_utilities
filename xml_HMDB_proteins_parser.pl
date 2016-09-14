@@ -23,7 +23,7 @@ use Data::Dump qw(dump);
 
 
 #VERBOSE OPTION
-my $verbose = "no"; 
+my $verbose = "yes"; 
 
 #DEFINE THE FUNCTION THAT WILL DUMP THE ARRAYS INTO STRINGS
 sub array_dumper {
@@ -48,17 +48,7 @@ sub array_dumper {
 }
   
   
-  
-  sub protein_dumper {
-	#DUMP ARRAYS
-	my $string=Dumper(@_);
-	#GET NULL FIELDS
-	
-	$string=~s/},\n +{\n +//gi;
-	$string=~s/ +//gi;
-		
-	return(split(/\n/,$string));
-}
+
   
   
     
@@ -101,8 +91,8 @@ for(my $i=0; $i<scalar(@protein_files); $i++){
 	my $protein_type = $data->{protein_type};
 	my $synonyms= array_dumper($data->{synonyms}->{synonym});
 	my $gene_name = $data->{gene_name};
-	my $general_function = $data->{general_function};
-	my $specific_function = $data->{specific_function};
+	my $general_function = array_dumper ($data->{general_function});
+	my $specific_function = array_dumper ($data->{specific_function});
 	$specific_function=~s/[\n|\t]//gi;
 	
 	my $pathways_names=array_dumper($data->{pathways}->{pathway});
