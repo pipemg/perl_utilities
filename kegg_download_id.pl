@@ -24,7 +24,7 @@
 #	#system("wget http://rest.kegg.jp/get/hsa:".$i);
 #}
 
-# cat gene_download/hsa\:*| grep "EC\:"| perl -pe 's/.+[\[|(]//gi'|perl -pe 's/[\]|)]\n/\n/gi'|perl -pe 's/ /\nec\:/gi'| tr '[:upper:]' '[:lower:]' |grep -v "-"|sort|uniq|grep -v "n" > EC_numbers.list
+# cat gene_download/hsa*| grep "EC\:"| perl -pe 's/.+[\[|(]//gi'|perl -pe 's/[\]|)]\n/\n/gi'|perl -pe 's/ /\nec\:/gi'| tr '[:upper:]' '[:lower:]' |grep -v "-"|sort|uniq|grep -v "n" > EC_numbers.list
 
 
 @list=`more ec_numbers.list`;
